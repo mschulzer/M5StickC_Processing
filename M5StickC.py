@@ -1,12 +1,14 @@
-import imu
+from lib import imu
+from m5stack import lcd
 import time
 import fusion
-from m5stack import lcd
+
 
 myIMU = imu.IMU()
 filter = fusion.MahonyFilter()
 
 lcd.clear()
+lcd.orient(lcd.LANDSCAPE_FLIP)
 lcd.print('Se Processing', 20, 30)
 
 while True:
